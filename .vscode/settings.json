@@ -1,0 +1,11 @@
+{
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "cSpell.ignoreWords": [
+    "api",
+    "app",
+    "key",
+    "react",
+    "tmdb"
+  ]
+}
