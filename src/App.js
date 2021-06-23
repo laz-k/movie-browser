@@ -7,7 +7,7 @@ import Search from "./components/Search";
 import MovieView from "./components/MovieView";
 import Page404 from "./components/Page404";
 import Footer from './components/Footer'
-import { Route, Switch } from "react-router";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 
@@ -34,21 +34,23 @@ function App() {
 	}, [searchText]);
 
 	return (
+		<Router>
 		<div>
 			<Navbar searchText={searchText} setSearchText={setSearchText} inputText={inputText} setInputText={setInputText} />
 			<Switch>
 				<Route path="/" exact>
 					<Home />
 				</Route>
-				<Route path="/about" component={About} />
-				<Route path="/search">
+				<Route path="/about" exact> <About/>  </Route>
+				<Route path="/search" exact>
 					<Search keyword={searchText} searchResults={searchResults} />
 				</Route>
-				<Route path="/movies/:id" component={MovieView} />
-				<Route component={Page404} />
+				<Route path="/movies/:id" exact> <MovieView/> </Route>
+				<Route path=""> <Page404/> </Route>
 			</Switch>
 			<Footer />
 		</div>
+		</Router>
 	);
 }
 
