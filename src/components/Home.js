@@ -16,7 +16,6 @@ const Home = () => {
 			});
 	},[]);
 
-	console.log(movieDetails);
 	
 	const resultsHtml = movieDetails.map((data, index) => {
 		return <Card movie={data} key={index} />;
