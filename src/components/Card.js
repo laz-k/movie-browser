@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
+import missingPoster from "../missing-poster.jpg"
 
 const Card = ({ movie }) => {
 	const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-	const missingPoster = "images/missing-poster.jpg";
 	const detailUrl = `/movies/${movie.id}`;
 
 	return (
